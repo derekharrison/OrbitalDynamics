@@ -166,7 +166,7 @@ while t < max_t
         %Calculate force acting particles
         Fp = zeros(2, Np);        
         for n_p = 1:Np
-            %Calculating force on particlles due to other particles
+            %Calculating force on particles due to other particles
             for n_p_n = 1:Np
                 if n_p_n ~= n_p
                     rp = [X_p(n_p); Y_p(n_p)];
