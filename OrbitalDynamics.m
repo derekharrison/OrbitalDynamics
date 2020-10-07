@@ -1,8 +1,8 @@
 %Charged particle dynamics
 
-m_p = 100;            %mass of positively charged particle in kg
-Np = 2;             %number of positively charged particles
-k = 10;           %proportionality constant in Coulomb's law
+m_p = 100;            %mass of particles in kg
+Np = 4;             %number particles
+k = 10;           %proportionality constant Newton's law
 L = 50;             %size domain
 writevideo = true;  %write to video guard
 max_t = 6;          %max simulation time
@@ -137,10 +137,10 @@ while t < max_t
             v_y_p(coll_partner_1) = -v_y_p(coll_partner_1);
         end
 
-        %Calculate force acting on positively charged particles
+        %Calculate force acting on particles
         Fp = zeros(2, Np);        
         for n_p = 1:Np
-            %Calculating force on e particles due to other e particles
+            %Calculating force on particles due to other particles
             for n_p_n = 1:Np
                 if n_p_n ~= n_p
                     rp = [X_p(n_p); Y_p(n_p)];
@@ -163,10 +163,10 @@ while t < max_t
         
         t = t + dt
         
-        %Calculate force acting on positively charged particles
+        %Calculate force acting particles
         Fp = zeros(2, Np);        
         for n_p = 1:Np
-            %Calculating force on e particles due to other e particles
+            %Calculating force on particlles due to other particles
             for n_p_n = 1:Np
                 if n_p_n ~= n_p
                     rp = [X_p(n_p); Y_p(n_p)];
@@ -177,7 +177,7 @@ while t < max_t
             end            
         end
         
-        %Updating velocities of p particles
+        %Updating velocities of particles
         for n_p = 1:Np
             v_x_p(n_p) = Fp(1,n_p) / m_p_i(n_p) * dt + v_x_p(n_p);
             v_y_p(n_p) = Fp(2,n_p) / m_p_i(n_p) * dt + v_y_p(n_p);
