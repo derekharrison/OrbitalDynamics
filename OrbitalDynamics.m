@@ -20,7 +20,7 @@ err = 1e-8;
 v_x_p = zeros(Np,1);
 v_y_p = zeros(Np,1);
 
-v_x_p(2) = 00;
+v_x_p(2) = 0;
 v_y_p(2) = 1200;
 
 v_x_p(3) = 0;
